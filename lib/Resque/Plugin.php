@@ -102,7 +102,7 @@ class Plugin {
 	 */
 	public static function createInstances($job) {
 		$instances = array();
-		$jobClass = $job->getClass();
+		$jobClass = get_class($job->getInstance());
 
 		if (property_exists($jobClass, 'resquePlugins')) {
 			$pluginClasses = $jobClass::$resquePlugins;
